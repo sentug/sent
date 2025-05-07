@@ -491,16 +491,7 @@ info@sentug.de </p>
   </footer>
 
   <script>
-window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('preferredLanguage');
-  if (savedLang) {
-    applyLanguage(savedLang); // deine bestehende Funktion, um Inhalte umzuschalten
-  }
-});
-
-  const defaultLang = 'de';
-const savedLang = localStorage.getItem('preferredLanguage') || defaultLang;
-applyLanguage(savedLang);
+ const defaultLang = 'de';
 
   function showSection(sectionId) {
     document.querySelectorAll('main section').forEach(section => section.classList.add('hidden'));
