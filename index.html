@@ -108,7 +108,7 @@
 
     <!-- Impressum -->
     <section id="impressum" class="hidden">
-      <div class="lang-de" id="impressum-de">
+      <div id="impressum-de" class="lang lang-de">
       <h1>Impressum</h1>
       <p><strong>Firma:</strong> SENT UG (haftungsbeschränkt)<br>
       <strong>Geschäftsführer:</strong> Emil Merten & Nicolas Eckert<br>
@@ -173,7 +173,7 @@
     Einige der auf dieser Website verwendeten Bilder wurden mithilfe künstlicher Intelligenz (KI) generiert. Diese Bilder wurden nachbearbeitet, um den visuellen Stil und die Ästhetik des Spiels zu wahren.
   </p>
  </div>
-      <div class="lang-en hidden" id="impressum-en">
+      <div id="impressum-en" class="lang lang-en hidden">
     <h1>Legal Notice</h1>
     <p>Company: SENT UG (haftungsbeschränkt)<br>
     Managing Directors: Emil Merten & Nicolas Eckert<br>
@@ -493,22 +493,34 @@ info@sentug.de </p>
   </footer>
 
   <script>
-  function showSection(id) {
+  function showSection(sectionId) {
+    // Alle Sections verstecken
     document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
+
+    // Nur gewählte Section anzeigen
+    const section = document.getElementById(sectionId);
+    section.classList.remove('hidden');
+    
+    // Aktuelle Sprache anzeigen
+    const currentLang = document.querySelector('select')?.value || 'de';
+    selectLanguage(currentLang, sectionId);
   }
 
-  function selectLanguage(lang) {
-    document.querySelectorAll('#home > div, #impressum > div, #datenschutz > div').forEach(el => {
-      el.classList.add('hidden');
-    });
-    document.querySelectorAll(`#${lang}`).forEach(el => el.classList.remove('hidden'));
+  function selectLanguage(lang, currentSectionId = null) {
+    // Verstecke alle Sprachvarianten
+    document.querySelectorAll('.lang-de, .lang-en').forEach(el => el.classList.add('hidden'));
+
+    // Zeige passende Sprache nur in der aktuellen Sektion
+    const section = currentSectionId 
+      ? document.getElementById(currentSectionId) 
+      : document.querySelector('main section:not(.hidden)');
+    if (!section) return;
+
+    section.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
   }
 
-  // Standardmäßig nur Deutsch anzeigen
-  document.addEventListener("DOMContentLoaded", () => {
-    selectLanguage('de');
-    showSection('home');
+  document.addEventListener('DOMContentLoaded', () => {
+    showSection('home'); // Startseite anzeigen
   });
 </script>
 </body>
