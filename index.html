@@ -45,7 +45,9 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .app-box {
+    .app-box:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
       border: 2px solid #7A3EE4;
       padding: 1rem;
       border-radius: 10px;
@@ -70,16 +72,16 @@
     <a href="#" onclick="showSection('impressum')">Impressum</a>
     <a href="#" onclick="showSection('datenschutz')">Datenschutz</a>
     <select onchange="selectLanguage(this.value)" style="margin-left: 1rem; padding: 0.3rem; border-radius: 5px;">
-     <button onclick="selectLanguage('de')">Deutsch</button>
-     <button onclick="selectLanguage('en')">English</button>
-    </select>
+  <option value="de">Deutsch</option>
+  <option value="en">English</option>
+</select>
   </nav>
 </header>
 
   <main class="container">
     <!-- Home Section -->
     <section id="home">
-      <div id="de">
+      <div class="lang-de" id="home-de">
         <h1>Willkommen bei SENT UG (haftungsbeschränkt)</h1>
         <p>Wir sind ein junges Software-Startup mit Fokus auf moderne, verbindende Lösungen im Bereich Social Networking. Wir entwickeln Apps mit Weitblick – von der ersten Idee bis zum letzten Code.</p>
         <p>Unser Schwerpunkt liegt auf App-Entwicklung, Softwarekonzepten und innovativen Nutzererlebnissen, die die Zukunft digitaler Interaktion gestalten.</p>
@@ -91,7 +93,7 @@
         </div>
       </div>
 
-      <div id="en" class="hidden">
+      <div class="lang-en hidden" id="home-en">
         <h1>Welcome to SENT UG (haftungsbeschränkt)</h1>
         <p>We are a young software startup focused on modern, connecting solutions in the social networking space. Our founders Emil Merten and Nicolas Eckert create future-oriented apps – from first concept to final code.</p>
         <p>We specialize in app development, software concepts, and innovative user experiences that help shape the future of digital interaction.</p>
@@ -106,7 +108,7 @@
 
     <!-- Impressum -->
     <section id="impressum" class="hidden">
-      <div id="de">
+      <div class="lang-de" id="impressum-de">
       <h1>Impressum</h1>
       <p><strong>Firma:</strong> SENT UG (haftungsbeschränkt)<br>
       <strong>Geschäftsführer:</strong> Emil Merten & Nicolas Eckert<br>
@@ -171,7 +173,7 @@
     Einige der auf dieser Website verwendeten Bilder wurden mithilfe künstlicher Intelligenz (KI) generiert. Diese Bilder wurden nachbearbeitet, um den visuellen Stil und die Ästhetik des Spiels zu wahren.
   </p>
  </div>
-      <div id="en" class="hidden">
+      <div class="lang-en hidden" id="impressum-en">
     <h1>Legal Notice</h1>
     <p>Company: SENT UG (haftungsbeschränkt)<br>
     Managing Directors: Emil Merten & Nicolas Eckert<br>
@@ -224,7 +226,7 @@ Some of the images used on this website were generated using artificial intellig
 
     <!-- Datenschutz -->
     <section id="datenschutz" class="hidden">
-      <div id="de">
+      <div class="lang-de" id="datenschutz-de">
       <h1>Datenschutzerklärung</h1>
 
   <p><strong>Letzte Aktualisierung: 19.03.2025</strong></p>
@@ -363,7 +365,7 @@ Some of the images used on this website were generated using artificial intellig
     <a href="mailto:info@sentug.de">info@sentug.de</a>
   </p>
       </div>
-      <div id="en" class="hidden">
+      <div class="lang-en hidden" id="datenschutz-en">
         <h1>Privacy Policy</h1>
         <p>Last updated: March 18, 2025
 
@@ -491,34 +493,23 @@ info@sentug.de </p>
   </footer>
 
   <script>
- const defaultLang = 'de';
-
-  function showSection(sectionId) {
-    document.querySelectorAll('main section').forEach(section => section.classList.add('hidden'));
-    document.getElementById(sectionId).classList.remove('hidden');
+  function showSection(id) {
+    document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
   }
 
-    function selectLanguage(lang) {
-          currentLang = lang;
-  localStorage.setItem('preferredLanguage', lang);
-  applyLanguage(lang); // deine Funktion zur Sprachumschaltung
-});
-
-    // Sichtbaren Sprachcontainer pro aktivem Abschnitt einblenden
-    ['home', 'impressum', 'datenschutz'].forEach(sectionId => {
-      const section = document.getElementById(sectionId);
-      if (!section.classList.contains('hidden')) {
-        const langDiv = section.querySelector(`#${lang}`);
-        if (langDiv) langDiv.classList.remove('hidden');
-      }
+  function selectLanguage(lang) {
+    document.querySelectorAll('#home > div, #impressum > div, #datenschutz > div').forEach(el => {
+      el.classList.add('hidden');
     });
+    document.querySelectorAll(`#${lang}`).forEach(el => el.classList.remove('hidden'));
   }
 
-  // Standardanzeige: Home mit deutscher Sprache
-  window.onload = () => {
+  // Standardmäßig nur Deutsch anzeigen
+  document.addEventListener("DOMContentLoaded", () => {
+    selectLanguage('de');
     showSection('home');
-    switchLang('de');
-  };
+  });
 </script>
 </body>
 </html>
