@@ -1,588 +1,862 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SENT UG – Software Development</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-    header {
-      background-color: #7A3EE4;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img {
-      height: 40px;
-    }
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1 {
-      color: #7A3EE4;
-    }
-    .lang-toggle {
-      text-align: right;
-      margin-top: -2rem;
-    }
-    .apps {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .app-box:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
-      border: 2px solid #7A3EE4;
-      padding: 1rem;
-      border-radius: 10px;
-      flex: 1 1 200px;
-    }
-    footer {
-      background-color: #f0f0f0;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 4rem;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENT UG – Software Development</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+        header {
+            background-color: #7A3EE4;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+        }
+        nav a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        h1 {
+            color: #7A3EE4;
+        }
+        .lang-toggle {
+            text-align: right;
+            margin-top: -2rem;
+        }
+        .apps {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .app-box:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            border: 2px solid #7A3EE4;
+            padding: 1rem;
+            border-radius: 10px;
+            flex: 1 1 200px;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <header>
-  <img src="logo.png" alt="SENT UG Logo" />
-  <nav>
-    <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#" onclick="showSection('impressum')">Impressum</a>
-    <a href="#" onclick="showSection('datenschutz')">Datenschutz</a>
-    <select onchange="selectLanguage(this.value)" style="margin-left: 1rem; padding: 0.3rem; border-radius: 5px;">
-  <option value="de">Deutsch</option>
-  <option value="en">English</option>
-</select>
-  </nav>
-</header>
+    <header>
+        <img src="logo.png" alt="SENT UG Logo" />
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('impressum')">Impressum</a>
+            <a href="#" onclick="showSection('datenschutz')">Datenschutz</a>
+            <a href="#" onclick="showSection('support')">Support</a>
+            <select onchange="selectLanguage(this.value)" style="margin-left: 1rem; padding: 0.3rem; border-radius: 5px;">
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </nav>
+    </header>
 
-  <main class="container">
-    <!-- Home Section -->
-    <section id="home">
-      <div class="lang-de" id="home-de">
-        <h1>Willkommen bei SENT UG (haftungsbeschränkt)</h1>
-        <p>Wir sind ein junges Software-Startup mit Fokus auf moderne, verbindende Lösungen im Bereich Social Networking. Wir entwickeln Apps mit Weitblick – von der ersten Idee bis zum letzten Code.</p>
-        <p>Unser Schwerpunkt liegt auf App-Entwicklung, Softwarekonzepten und innovativen Nutzererlebnissen, die die Zukunft digitaler Interaktion gestalten.</p>
-        <h2>Unsere Apps</h2>
-        <div class="apps">
-          <div class="app-box"><strong>Drinkory</strong><br>Memory trifft Partyspiel</div>
-          <div class="app-box"><strong>More to come...</strong><br>Erinnerungen erfassen & teilen</div>
-          <div class="app-box"><strong></strong><br></div>
-        </div>
-      </div>
+    <main class="container">
+        <section id="home">
+            <div class="lang-de" id="home-de">
+                <h1>Willkommen bei SENT UG (haftungsbeschränkt)</h1>
+                <p>Wir sind ein junges Software-Startup mit Fokus auf moderne, verbindende Lösungen im Bereich Social Networking. Wir entwickeln Apps mit Weitblick – von der ersten Idee bis zum letzten Code.</p>
+                <p>Unser Schwerpunkt liegt auf App-Entwicklung, Softwarekonzepten und innovativen Nutzererlebnissen, die die Zukunft digitaler Interaktion gestalten.</p>
+                <h2>Unsere Apps</h2>
+                <div class="apps">
+                    <div class="app-box"><strong>Drinkory</strong><br>Memory trifft Partyspiel</div>
+                    <div class="app-box"><strong>More to come...</strong><br>Erinnerungen erfassen & teilen</div>
+                    <div class="app-box"><strong></strong><br></div>
+                </div>
+            </div>
 
-      <div class="lang-en hidden" id="home-en">
-        <h1>Welcome to SENT UG (haftungsbeschränkt)</h1>
-        <p>We are a young software startup focused on modern, connecting solutions in the social networking space. We create future-oriented apps – from first concept to final code.</p>
-        <p>We specialize in app development, software concepts, and innovative user experiences that help shape the future of digital interaction.</p>
-        <h2>Our Apps</h2>
-        <div class="apps">
-          <div class="app-box"><strong>Drinkory</strong><br>Memory meets party game</div>
-          <div class="app-box"><strong>More to come...</strong><br>Capture & share moments</div>
-          <div class="app-box"><strong></strong><br></div>
-        </div>
-      </div>
-    </section>
+            <div class="lang-en hidden" id="home-en">
+                <h1>Welcome to SENT UG (haftungsbeschränkt)</h1>
+                <p>We are a young software startup focused on modern, connecting solutions in the social networking space. We create future-oriented apps – from first concept to final code.</p>
+                <p>We specialize in app development, software concepts, and innovative user experiences that help shape the future of digital interaction.</p>
+                <h2>Our Apps</h2>
+                <div class="apps">
+                    <div class="app-box"><strong>Drinkory</strong><br>Memory meets party game</div>
+                    <div class="app-box"><strong>More to come...</strong><br>Capture & share moments</div>
+                    <div class="app-box"><strong></strong><br></div>
+                </div>
+            </div>
 
-    <!-- Impressum -->
-    <section id="impressum" class="hidden">
-      <div id="impressum-de" class="lang lang-de">
-      <h1>Impressum</h1>
-      <p><strong>Firma:</strong> SENT UG (haftungsbeschränkt)<br>
-      <strong>Geschäftsführer:</strong> Emil Merten & Nicolas Eckert<br>
-      <strong>Adresse:</strong> Eschenbachstr. 34, 60596 Frankfurt am Main, Deutschland<br>
-      <strong>E-Mail:</strong> info@sentug.de</p>
-  <h2>Angaben gemäß § 5 DDG</h2>
+            <div class="lang-es hidden" id="home-es">
+                <h1>Bienvenidos a SENT UG (haftungsbeschränkt)</h1>
+                <p>Somos una joven startup de software enfocada en soluciones modernas y conectivas en el ámbito de las redes sociales. Desarrollamos aplicaciones con visión de futuro, desde la primera idea hasta el código final.</p>
+                <p>Nuestra especialización radica en el desarrollo de aplicaciones, conceptos de software y experiencias de usuario innovadoras que ayudan a dar forma al futuro de la interacción digital.</p>
+                <h2>Nuestras Aplicaciones</h2>
+                <div class="apps">
+                    <div class="app-box"><strong>Drinkory</strong><br>Memoria se une a juego de fiesta</div>
+                    <div class="app-box"><strong>Más por venir...</strong><br>Captura y comparte momentos</div>
+                    <div class="app-box"><strong></strong><br></div>
+                </div>
+            </div>
+        </section>
 
-  <p>
-    Registereintrag:<br>
-    Eingetragen beim Amtsgericht Frankfurt am Main<br>
-    Handelsregisternummer: HRB 138549
-  </p>
+        <section id="impressum" class="hidden">
+            <div id="impressum-de" class="lang lang-de">
+                <h1>Impressum</h1>
+                <p><strong>Firma:</strong> SENT UG (haftungsbeschränkt)<br>
+                <strong>Geschäftsführer:</strong> Emil Merten & Nicolas Eckert<br>
+                <strong>Adresse:</strong> Eschenbachstr. 34, 60596 Frankfurt am Main, Deutschland<br>
+                <strong>E-Mail:</strong> info@sentug.de</p>
+                <h2>Angaben gemäß § 5 DDG</h2>
 
-  <h2>Haftungsausschluss</h2>
+                <p>
+                    Registereintrag:<br>
+                    Eingetragen beim Amtsgericht Frankfurt am Main<br>
+                    Handelsregisternummer: HRB 138549
+                </p>
 
-  <h3>Haftung für Inhalte</h3>
-  <p>
-    Unsere Inhalte wurden mit größtmöglicher Sorgfalt erstellt. Wir übernehmen jedoch keine Gewähr für deren Richtigkeit, Vollständigkeit oder Aktualität. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte verantwortlich. Nach §§ 8 bis 10 DDG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Verpflichtungen zur Entfernung oder Sperrung von Informationen nach geltendem Recht bleiben hiervon unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Für Schäden, die durch Nutzung der Inhalte entstehen, übernehmen wir keine Verantwortung.
-  </p>
+                <h2>Haftungsausschluss</h2>
 
-  <h3>Haftung für Links</h3>
-  <p>
-    Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte übernehmen wir keine Haftung. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Sollten uns nachträglich Verstöße bekannt werden, entfernen wir die Links umgehend.
-  </p>
+                <h3>Haftung für Inhalte</h3>
+                <p>
+                    Unsere Inhalte wurden mit größtmöglicher Sorgfalt erstellt. Wir übernehmen jedoch keine Gewähr für deren Richtigkeit, Vollständigkeit oder Aktualität. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte verantwortlich. Nach §§ 8 bis 10 DDG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Verpflichtungen zur Entfernung oder Sperrung von Informationen nach geltendem Recht bleiben hiervon unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Für Schäden, die durch Nutzung der Inhalte entstehen, übernehmen wir keine Verantwortung.
+                </p>
 
-  <h2>Urheberrecht</h2>
-  <p>
-    Die auf dieser Website erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung des jeweiligen Autors. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-  </p>
+                <h3>Haftung für Links</h3>
+                <p>
+                    Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte übernehmen wir keine Haftung. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Sollten uns nachträglich Verstöße bekannt werden, entfernen wir die Links umgehend.
+                </p>
 
-  <h2>Datenschutz</h2>
-  <p>
-    Die Nutzung unserer mobilen Applikation ist grundsätzlich ohne die aktive Angabe personenbezogener Daten möglich. Allerdings werden bei der Nutzung automatisch bestimmte technische Daten erfasst, darunter:<br>
-    - IP-Adresse (gekürzt bei Nutzung von Google Analytics)<br>
-    - Geräteinformationen (z. B. Betriebssystem, App-Version)<br>
-    - Nutzungsverhalten (z. B. Dauer der Sitzungen, In-App-Interaktionen)<br><br>
-    Diese Daten dienen ausschließlich der Verbesserung unserer App und werden nur nach deiner ausdrücklichen Einwilligung erhoben. Die Verarbeitung erfolgt gemäß unserer Datenschutzerklärung, die weitere Details zur Speicherung, Nutzung und deinem Widerspruchsrecht enthält.<br><br>
-    Personenbezogene Daten wie Name oder E-Mail-Adresse werden nur erhoben, wenn du uns diese freiwillig mitteilst, z. B. im Rahmen einer Support-Anfrage. Diese Daten werden ohne deine Zustimmung nicht an Dritte weitergegeben.
-  </p>
+                <h2>Urheberrecht</h2>
+                <p>
+                    Die auf dieser Website erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung des jeweiligen Autors. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                </p>
 
-  <h2>Google Analytics & Google AdSense</h2>
-  <p>
-    Diese Website verwendet Google Analytics & AdSense. Die Nutzung erfolgt ausschließlich nach Ihrer ausdrücklichen Einwilligung. Sie können Ihre Zustimmung jederzeit über unser Cookie-Consent-Tool widerrufen.
-  </p>
+                <h2>Datenschutz</h2>
+                <p>
+                    Die Nutzung unserer mobilen Applikation ist grundsätzlich ohne die aktive Angabe personenbezogener Daten möglich. Allerdings werden bei der Nutzung automatisch bestimmte technische Daten erfasst, darunter:<br>
+                    - IP-Adresse (gekürzt bei Nutzung von Google Analytics)<br>
+                    - Geräteinformationen (z. B. Betriebssystem, App-Version)<br>
+                    - Nutzungsverhalten (z. B. Dauer der Sitzungen, In-App-Interaktionen)<br><br>
+                    Diese Daten dienen ausschließlich der Verbesserung unserer App und werden nur nach deiner ausdrücklichen Einwilligung erhoben. Die Verarbeitung erfolgt gemäß unserer Datenschutzerklärung, die weitere Details zur Speicherung, Nutzung und deinem Widerspruchsrecht enthält.<br><br>
+                    Personenbezogene Daten wie Name oder E-Mail-Adresse werden nur erhoben, wenn du uns diese freiwillig mitteilst, z. B. im Rahmen einer Support-Anfrage. Diese Daten werden ohne deine Zustimmung nicht an Dritte weitergegeben.
+                </p>
 
-  <h2>Widerspruch gegen Werbe-E-Mails</h2>
-  <p>
-    Der Nutzung unserer Kontaktdaten für unverlangte Werbung wird ausdrücklich widersprochen. Wir behalten uns rechtliche Schritte im Falle unverlangter Zusendungen vor.
-  </p>
+                <h2>Google Analytics & Google AdSense</h2>
+                <p>
+                    Diese Website verwendet Google Analytics & AdSense. Die Nutzung erfolgt ausschließlich nach Ihrer ausdrücklichen Einwilligung. Sie können Ihre Zustimmung jederzeit über unser Cookie-Consent-Tool widerrufen.
+                </p>
 
-  <p>
-    Einige der auf dieser Website verwendeten Bilder wurden mithilfe künstlicher Intelligenz (KI) generiert. Diese Bilder wurden nachbearbeitet, um den visuellen Stil und die Ästhetik des Spiels zu wahren.
-  </p>
- </div>
-      <div id="impressum-en" class="lang lang-en hidden">
-    <h1>Legal Notice</h1>
+                <h2>Widerspruch gegen Werbe-E-Mails</h2>
+                <p>
+                    Der Nutzung unserer Kontaktdaten für unverlangte Werbung wird ausdrücklich widersprochen. Wir behalten uns rechtliche Schritte im Falle unverlangter Zusendungen vor.
+                </p>
 
-  <p>
-    <strong>Company:</strong> SENT UG (haftungsbeschränkt)<br>
-    <strong>Managing Directors:</strong> Emil Merten & Nicolas Eckert<br>
-    <strong>Address:</strong> Eschenbachstr. 34, 60596 Frankfurt am Main, Germany<br>
-    <strong>Email:</strong> info@sentug.de
-  </p>
+                <p>
+                    Einige der auf dieser Website verwendeten Bilder wurden mithilfe künstlicher Intelligenz (KI) generiert. Diese Bilder wurden nachbearbeitet, um den visuellen Stil und die Ästhetik des Spiels zu wahren.
+                </p>
+            </div>
+            <div id="impressum-en" class="lang lang-en hidden">
+                <h1>Legal Notice</h1>
 
-  <h2>Information pursuant to Section 5 DDG</h2>
-  <p>
-    SENT UG (haftungsbeschränkt)<br>
-    Eschenbachstr. 34<br>
-    60596 Frankfurt<br>
-    Germany
-  </p>
+                <p>
+                    <strong>Company:</strong> SENT UG (haftungsbeschränkt)<br>
+                    <strong>Managing Directors:</strong> Emil Merten & Nicolas Eckert<br>
+                    <strong>Address:</strong> Eschenbachstr. 34, 60596 Frankfurt am Main, Germany<br>
+                    <strong>Email:</strong> info@sentug.de
+                </p>
 
-  <h2>Represented by</h2>
-  <p>
-    Managing Directors: Emil Merten, Nicolas Eckert
-  </p>
+                <h2>Information pursuant to Section 5 DDG</h2>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Frankfurt<br>
+                    Germany
+                </p>
 
-  <h2>Contact</h2>
-  <p>
-    📧 Email: info@sentug.de
-  </p>
+                <h2>Represented by</h2>
+                <p>
+                    Managing Directors: Emil Merten, Nicolas Eckert
+                </p>
 
-  <h2>Company Registration</h2>
-  <p>
-    Registered at Frankfurt am Main District Court<br>
-    Commercial Register Number: HRB 138549
-  </p>
+                <h2>Contact</h2>
+                <p>
+                    📧 Email: info@sentug.de
+                </p>
 
-  <h2>Disclaimer</h2>
+                <h2>Company Registration</h2>
+                <p>
+                    Registered at Frankfurt am Main District Court<br>
+                    Commercial Register Number: HRB 138549
+                </p>
 
-  <h3>Liability for Content</h3>
-  <p>
-    The content on our website has been created with the utmost care. However, we do not assume any liability for its accuracy, completeness, or timeliness.
-    As a service provider, we are responsible for our own content in accordance with Section 7 (1) DDG. However, pursuant to Sections 8 to 10 DDG,
-    we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that may indicate illegal activity.
-    Obligations to remove or block the use of information under applicable laws remain unaffected. Liability in this regard is only possible
-    from the point at which a specific legal violation becomes known.
-  </p>
+                <h2>Disclaimer</h2>
 
-  <h3>Liability for Links</h3>
-  <p>
-    Our website contains links to external third-party websites over which we have no control. Therefore, we cannot accept any liability for their content.
-    At the time of linking, no legal violations were identified. If we become aware of any infringements, we will remove the respective links immediately.
-  </p>
+                <h3>Liability for Content</h3>
+                <p>
+                    The content on our website has been created with the utmost care. However, we do not assume any liability for its accuracy, completeness, or timeliness.
+                    As a service provider, we are responsible for our own content in accordance with Section 7 (1) DDG. However, pursuant to Sections 8 to 10 DDG,
+                    we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that may indicate illegal activity.
+                    Obligations to remove or block the use of information under applicable laws remain unaffected. Liability in this regard is only possible
+                    from the point at which a specific legal violation becomes known.
+                </p>
 
-  <h2>Copyright</h2>
-  <p>
-    The content and works created by the operators of this website are subject to German copyright law.
-    Any reproduction, modification, distribution, or exploitation outside the limits of copyright law requires
-    the written consent of the respective author or creator. Downloads and copies of this site are permitted only for private, non-commercial use.
-  </p>
+                <h3>Liability for Links</h3>
+                <p>
+                    Our website contains links to external third-party websites over which we have no control. Therefore, we cannot accept any liability for their content.
+                    At the time of linking, no legal violations were identified. If we become aware of any infringements, we will remove the respective links immediately.
+                </p>
 
-  <h2>Data Protection</h2>
-  <p>
-    The use of our mobile application is generally possible without providing personal data.
-    If personal data (e.g., name, email) is collected, this is always done voluntarily.
-    These data will not be shared with third parties without your explicit consent.
-  </p>
+                <h2>Copyright</h2>
+                <p>
+                    The content and works created by the operators of this website are subject to German copyright law.
+                    Any reproduction, modification, distribution, or exploitation outside the limits of copyright law requires
+                    the written consent of the respective author or creator. Downloads and copies of this site are permitted only for private, non-commercial use.
+                </p>
 
-  <h2>Google Analytics & Google AdSense</h2>
-  <p>
-    This website uses Google Analytics & AdSense. Usage is subject to your explicit consent.
-    You can withdraw your consent at any time via our Cookie Consent Tool.
-  </p>
+                <h2>Data Protection</h2>
+                <p>
+                    The use of our mobile application is generally possible without providing personal data.
+                    If personal data (e.g., name, email) is collected, this is always done voluntarily.
+                    These data will not be shared with third parties without your explicit consent.
+                </p>
 
-  <h2>Objection to Unsolicited Advertising Emails</h2>
-  <p>
-    We hereby object to the use of our contact data for sending unsolicited advertising and informational materials.
-    We reserve the right to take legal action in the event of unsolicited promotional material, such as spam emails.
-  </p>
+                <h2>Google Analytics & Google AdSense</h2>
+                <p>
+                    This website uses Google Analytics & AdSense. Usage is subject to your explicit consent.
+                    You can withdraw your consent at any time via our Cookie Consent Tool.
+                </p>
 
-  <h2>Image Source Notice</h2>
-  <p>
-    Some of the images used on this website were generated using artificial intelligence (AI).
-    These images have been edited to maintain the visual style and aesthetics of the game.
-  </p>
-</section>
+                <h2>Objection to Unsolicited Advertising Emails</h2>
+                <p>
+                    We hereby object to the use of our contact data for sending unsolicited advertising and informational materials.
+                    We reserve the right to take legal action in the event of unsolicited promotional material, such as spam emails.
+                </p>
 
-    <!-- Datenschutz -->
-    <section id="datenschutz" class="hidden">
-      <div class="lang-de" id="datenschutz-de">
-      <h1>Datenschutzerklärung</h1>
+                <h2>Image Source Notice</h2>
+                <p>
+                    Some of the images used on this website were generated using artificial intelligence (AI).
+                    These images have been edited to maintain the visual style and aesthetics of the game.
+                </p>
+            </div>
+            <div id="impressum-es" class="lang lang-es hidden">
+                <h1>Aviso Legal</h1>
 
-  <p><strong>Letzte Aktualisierung: 19.03.2025</strong></p>
+                <p>
+                    <strong>Empresa:</strong> SENT UG (haftungsbeschränkt)<br>
+                    <strong>Directores Generales:</strong> Emil Merten & Nicolas Eckert<br>
+                    <strong>Dirección:</strong> Eschenbachstr. 34, 60596 Fráncfort del Meno, Alemania<br>
+                    <strong>Correo Electrónico:</strong> info@sentug.de
+                </p>
 
-  <p>
-    Wir, SENT UG (haftungsbeschränkt), nehmen den Schutz deiner persönlichen Daten sehr ernst. In
-    dieser Datenschutzerklärung informieren wir dich darüber, welche Daten wir im Rahmen der
-    Nutzung unserer Videospiele erheben, wie wir sie verwenden und welche Rechte du hast.
-  </p>
+                <h2>Información según la Sección 5 DDG</h2>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Fráncfort del Meno<br>
+                    Alemania
+                </p>
 
-  <h2>1. Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO</h2>
-  <p>
-    SENT UG (haftungsbeschränkt)<br>
-    Eschenbachstr. 34<br>
-    60596 Frankfurt am Main<br>
-    Deutschland<br>
-    <a href="mailto:info@sentug.de">info@sentug.de</a><br><br>
-    Falls du Fragen zur Verarbeitung deiner personenbezogenen Daten hast, kannst du uns unter den
-    angegebenen Kontaktdaten erreichen.
-  </p>
+                <h2>Representado por</h2>
+                <p>
+                    Directores Generales: Emil Merten, Nicolas Eckert
+                </p>
 
-  <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
-  <p>
-    Wir erheben und verarbeiten personenbezogene Daten nur im Einklang mit der DSGVO und nur, wenn:
-  </p>
-  <ul>
-    <li>Du uns deine Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO gegeben hast</li>
-    <li>Die Verarbeitung zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)</li>
-    <li>Die Verarbeitung zur Wahrung unserer berechtigten Interessen erforderlich ist (Art. 6 Abs. 1 lit. f DSGVO)</li>
-  </ul>
+                <h2>Contacto</h2>
+                <p>
+                    📧 Correo electrónico: info@sentug.de
+                </p>
 
-  <h3>a) Automatisch erfasste Daten</h3>
-  <p>
-    Beim Benutzen der App werden folgende Daten automatisch erfasst:<br>
-    - Technische Daten: Gerätetyp, Betriebssystem, IP-Adresse<br>
-    - Nutzungsdaten: Spielstatistiken (z. B. Highscores, Fortschritt), Interaktionen im Spiel<br>
-    - Fehlermeldungen & Absturzberichte: Zur Verbesserung der App<br>
-    Diese Daten werden anonymisiert oder pseudonymisiert verarbeitet, soweit dies möglich ist.
-  </p>
+                <h2>Registro de la Empresa</h2>
+                <p>
+                    Registrado en el Juzgado de Distrito de Fráncfort del Meno<br>
+                    Número de Registro Mercantil: HRB 138549
+                </p>
 
-  <h3>b) Vom Nutzer bereitgestellte Daten</h3>
-  <p>
-    Falls du dich für zusätzliche Funktionen registrierst oder mit uns Kontakt aufnimmst, speichern wir folgende Daten:<br>
-    - Name oder Nutzername<br>
-    - E-Mail-Adresse (falls du uns kontaktierst)<br>
-    - Feedback und Support-Anfragen
-  </p>
+                <h2>Descargo de Responsabilidad</h2>
 
-  <h3>c) Zahlungsinformationen</h3>
-  <p>
-    Für In-App-Käufe erfolgt die Zahlungsabwicklung über Drittanbieter (z. B. Apple App Store, Google
-    Play Store). Wir haben keinen Zugriff auf deine Zahlungsdaten.
-  </p>
+                <h3>Responsabilidad por el Contenido</h3>
+                <p>
+                    El contenido de nuestro sitio web ha sido creado con el máximo cuidado. Sin embargo, no asumimos ninguna responsabilidad por su exactitud, integridad o actualidad.
+                    Como proveedor de servicios, somos responsables de nuestro propio contenido de acuerdo con la Sección 7 (1) DDG. Sin embargo, de conformidad con las Secciones 8 a 10 DDG,
+                    no estamos obligados a supervisar la información de terceros transmitida o almacenada ni a investigar circunstancias que puedan indicar una actividad ilegal.
+                    Las obligaciones de eliminar o bloquear el uso de información según las leyes aplicables no se ven afectadas. La responsabilidad en este sentido solo es posible
+                    a partir del momento en que se conoce una infracción legal específica.
+                </p>
 
-  <h3>d) Verarbeitung für Werbung und Analyse (mit Einwilligung)</h3>
-  <p>
-    Falls das Spiel Werbung enthält oder Analysedienste nutzt, werden Daten nur nach deiner
-    ausdrücklichen Einwilligung verarbeitet (Art. 6 Abs. 1 lit. a DSGVO).<br>
-    Wir nutzen möglicherweise folgende Dienste:<br>
-    - Google Analytics for Firebase (zur Verbesserung der Spielerfahrung)<br>
-    - AdMob oder Unity Ads (für personalisierte Werbung, falls aktiviert)<br><br>
-    Du kannst deine Einwilligung jederzeit widerrufen.
-  </p>
+                <h3>Responsabilidad por los Enlaces</h3>
+                <p>
+                    Nuestro sitio web contiene enlaces a sitios web externos de terceros sobre los cuales no tenemos control. Por lo tanto, no podemos aceptar ninguna responsabilidad por su contenido.
+                    En el momento de la vinculación, no se identificaron infracciones legales. Si tenemos conocimiento de alguna infracción, eliminaremos los enlaces correspondientes de inmediato.
+                </p>
 
-  <h2>3. Zweck der Datenverarbeitung</h2>
-  <p>
-    Wir nutzen die erfassten Daten, um:<br>
-    - Das Spiel bereitzustellen und zu verbessern<br>
-    - Fehler zu analysieren und zu beheben<br>
-    - Spielerlebnis und Inhalte zu optimieren<br>
-    - In-App-Käufe und Werbung zu verwalten<br>
-    - Auf Support-Anfragen zu reagieren<br><br>
-    Ohne deine Einwilligung werden deine Daten nicht für personalisierte Werbung oder Tracking genutzt.
-  </p>
+                <h2>Derechos de Autor</h2>
+                <p>
+                    El contenido y las obras creadas por los operadores de este sitio web están sujetos a la ley alemana de derechos de autor.
+                    Cualquier reproducción, modificación, distribución o explotación fuera de los límites de la ley de derechos de autor requiere
+                    el consentimiento por escrito del autor o creador respectivo. Las descargas y copias de este sitio están permitidas solo para uso privado y no comercial.
+                </p>
 
-  <h2>4. Speicherung und Löschung der Daten</h2>
-  <p>
-    Wir speichern deine Daten nur so lange, wie es für den jeweiligen Verwendungszweck erforderlich ist:<br>
-    - Nutzungsdaten: Bis zu 12 Monate (anonymisiert)<br>
-    - Support-Daten: Bis zur Beantwortung deiner Anfrage<br>
-    - Zahlungsinformationen: Werden nicht von uns gespeichert, sondern von Drittanbietern verarbeitet<br>
-    - Werbung & Analysedaten: Laut den Richtlinien der genutzten Drittanbieter (siehe deren Datenschutzerklärung)<br><br>
-    Wenn du die Löschung deiner Daten wünschst, kontaktiere uns unter <a href="mailto:info@sentug.de">info@sentug.de</a>.
-  </p>
+                <h2>Protección de Datos</h2>
+                <p>
+                    El uso de nuestra aplicación móvil es generalmente posible sin proporcionar datos personales.
+                    Si se recopilan datos personales (por ejemplo, nombre, correo electrónico), esto siempre se hace de forma voluntaria.
+                    Estos datos no se compartirán con terceros sin su consentimiento explícito.
+                </p>
 
-  <h2>5. Weitergabe an Dritte</h2>
-  <p>
-    Deine Daten werden nicht an unbefugte Dritte weitergegeben. Allerdings nutzen wir externe Dienstleister für:<br>
-    - Hosting und Speicherung (z. B. Firebase)<br>
-    - Analyse (z. B. Google Analytics, falls zugestimmt)<br>
-    - Werbung (z. B. AdMob, falls zugestimmt)<br><br>
-    Diese Dienstleister sind vertraglich zur Einhaltung der DSGVO verpflichtet.<br>
-    Eine Übermittlung in Drittländer (außerhalb der EU) erfolgt nur, wenn:<br>
-    - Der Dienstleister dem EU-U.S. Data Privacy Framework oder ähnlichen Schutzmechanismen unterliegt.<br>
-    - Eine Einwilligung gemäß Art. 49 Abs. 1 lit. a DSGVO vorliegt.<br><br>
-    Du kannst der Datenübertragung jederzeit widersprechen.
-  </p>
+                <h2>Google Analytics y Google AdSense</h2>
+                <p>
+                    Este sitio web utiliza Google Analytics y AdSense. El uso está sujeto a su consentimiento explícito.
+                    Puede retirar su consentimiento en cualquier momento a través de nuestra Herramienta de Consentimiento de Cookies.
+                </p>
 
-  <h2>6. Deine Rechte gemäß DSGVO</h2>
-  <p>
-    Als Nutzer hast du folgende Rechte:<br>
-    - Recht auf Auskunft (Art. 15 DSGVO)<br>
-    - Recht auf Berichtigung (Art. 16 DSGVO)<br>
-    - Recht auf Löschung (Art. 17 DSGVO)<br>
-    - Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br>
-    - Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br>
-    - Widerspruchsrecht (Art. 21 DSGVO)<br>
-    - Recht auf Widerruf (Art. 7 Abs. 3 DSGVO)<br><br>
-    Zur Ausübung deiner Rechte kontaktiere uns unter <a href="mailto:info@sentug.de">info@sentug.de</a>.<br>
-    Falls du der Meinung bist, dass die Verarbeitung deiner Daten gegen die DSGVO verstößt, hast du das Recht, dich bei einer Aufsichtsbehörde zu beschweren.
-  </p>
+                <h2>Oposición a Correos Electrónicos Publicitarios no Solicitados</h2>
+                <p>
+                    Por la presente, nos oponemos al uso de nuestros datos de contacto para el envío de publicidad y materiales informativos no solicitados.
+                    Nos reservamos el derecho de emprender acciones legales en caso de material promocional no solicitado, como correos electrónicos no deseados.
+                </p>
 
-  <h2>7. Einwilligung & Opt-Out-Möglichkeiten</h2>
-  <p>
-    Wenn wir personenbezogene Daten für Werbung oder Analyse nutzen, hast du folgende Möglichkeiten:<br>
-    - Zustimmen oder Ablehnen beim ersten Spielstart<br>
-    - Einwilligung jederzeit ändern über die Einstellungen in der App<br>
-    - Werbetracking deaktivieren in den Geräteeinstellungen (iOS/Android)
-  </p>
+                <h2>Aviso sobre la Fuente de la Imagen</h2>
+                <p>
+                    Algunas de las imágenes utilizadas en este sitio web fueron generadas utilizando inteligencia artificial (IA).
+                    Estas imágenes han sido editadas para mantener el estilo visual y la estética del juego.
+                </p>
+            </div>
+        </section>
 
-  <h2>8. Änderungen dieser Datenschutzerklärung</h2>
-  <p>
-    Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, falls sich rechtliche oder
-    technische Änderungen ergeben. Die aktuelle Version findest du immer in der App oder auf
-    unserer Website.
-  </p>
+        <section id="datenschutz" class="hidden">
+            <div class="lang-de" id="datenschutz-de">
+                <h1>Datenschutzerklärung</h1>
 
-  <h2>9. Kontakt für Datenschutz-Anfragen</h2>
-  <p>
-    Falls du Fragen zum Datenschutz hast oder deine Rechte ausüben möchtest, kannst du uns unter
-    folgender Adresse erreichen:<br><br>
-    SENT UG (haftungsbeschränkt)<br>
-    Eschenbachstr. 34<br>
-    60596 Frankfurt am Main<br>
-    Deutschland<br>
-    <a href="mailto:info@sentug.de">info@sentug.de</a>
-  </p>
-      </div>
-      <div class="lang-en hidden" id="datenschutz-en">
-       <h1>Privacy Policy</h1>
-  <p><strong>Last updated:</strong> March 18, 2025</p>
+                <p><strong>Letzte Aktualisierung: 19.03.2025</strong></p>
 
-  <p>
-    We, SENT UG (haftungsbeschränkt), take the protection of your personal data very seriously.
-    In this privacy policy, we inform you about which data we collect when you use our video game <strong>DRINKORY</strong>,
-    how we use it, and what rights you have.
-  </p>
+                <p>
+                    Wir, SENT UG (haftungsbeschränkt), nehmen den Schutz deiner persönlichen Daten sehr ernst. In
+                    dieser Datenschutzerklärung informieren wir dich darüber, welche Daten wir im Rahmen der
+                    Nutzung unserer Videospiele erheben, wie wir sie verwenden und welche Rechte du hast.
+                </p>
 
-  <h2>1. Controller pursuant to Art. 4 (7) GDPR</h2>
-  <p>
-    SENT UG (haftungsbeschränkt)<br>
-    Eschenbachstr. 34<br>
-    60596 Frankfurt<br>
-    Germany<br>
-    📧 info@sentug.de
-  </p>
-  <p>
-    If you have any questions about the processing of your personal data, you can contact us using the details provided above.
-  </p>
+                <h2>1. Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO</h2>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Frankfurt am Main<br>
+                    Deutschland<br>
+                    <a href="mailto:info@sentug.de">info@sentug.de</a><br><br>
+                    Falls du Fragen zur Verarbeitung deiner personenbezogenen Daten hast, kannst du uns unter den
+                    angegebenen Kontaktdaten erreichen.
+                </p>
 
-  <h2>2. Collection and Processing of Personal Data</h2>
-  <p>
-    We collect and process personal data only in accordance with the General Data Protection Regulation (GDPR) and only if:
-  </p>
-  <ul>
-    <li>You have given us your consent (Art. 6 (1) lit. a GDPR)</li>
-    <li>The processing is necessary for the performance of a contract or for pre-contractual measures (Art. 6 (1) lit. b GDPR)</li>
-    <li>The processing is necessary for the purposes of our legitimate interests (Art. 6 (1) lit. f GDPR)</li>
-  </ul>
+                <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+                <p>
+                    Wir erheben und verarbeiten personenbezogene Daten nur im Einklang mit der DSGVO und nur, wenn:
+                </p>
+                <ul>
+                    <li>Du uns deine Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO gegeben hast</li>
+                    <li>Die Verarbeitung zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)</li>
+                    <li>Die Verarbeitung zur Wahrung unserer berechtigten Interessen erforderlich ist (Art. 6 Abs. 1 lit. f DSGVO)</li>
+                </ul>
 
-  <h3>a) Automatically Collected Data</h3>
-  <p>
-    When playing DRINKORY, the following data is automatically collected:
-  </p>
-  <ul>
-    <li><strong>Technical Data:</strong> Device type, operating system, IP address</li>
-    <li><strong>Usage Data:</strong> Game statistics (e.g., highscores, progress), interactions within the game</li>
-    <li><strong>Error Reports & Crash Logs:</strong> To improve the app</li>
-  </ul>
-  <p>
-    These data are processed in an anonymized or pseudonymized manner whenever possible.
-  </p>
+                <h3>a) Automatisch erfasste Daten</h3>
+                <p>
+                    Beim Benutzen der App werden folgende Daten automatisch erfasst:<br>
+                    - Technische Daten: Gerätetyp, Betriebssystem, IP-Adresse<br>
+                    - Nutzungsdaten: Spielstatistiken (z. B. Highscores, Fortschritt), Interaktionen im Spiel<br>
+                    - Fehlermeldungen & Absturzberichte: Zur Verbesserung der App<br>
+                    Diese Daten werden anonymisiert oder pseudonymisiert verarbeitet, soweit dies möglich ist.
+                </p>
 
-  <h3>b) Data Provided by the User</h3>
-  <p>
-    If you register for additional features or contact us, we may store the following information:
-  </p>
-  <ul>
-    <li>Name or username</li>
-    <li>Email address (if you contact us)</li>
-    <li>Feedback and support inquiries</li>
-  </ul>
+                <h3>b) Vom Nutzer bereitgestellte Daten</h3>
+                <p>
+                    Falls du dich für zusätzliche Funktionen registrierst oder mit uns Kontakt aufnimmst, speichern wir folgende Daten:<br>
+                    - Name oder Nutzername<br>
+                    - E-Mail-Adresse (falls du uns kontaktierst)<br>
+                    - Feedback und Support-Anfragen
+                </p>
 
-  <h3>c) Payment Information</h3>
-  <p>
-    For in-app purchases, payment processing is handled by third-party providers (e.g., Apple App Store, Google Play Store).
-    We do not have access to your payment data.
-  </p>
+                <h3>c) Zahlungsinformationen</h3>
+                <p>
+                    Für In-App-Käufe erfolgt die Zahlungsabwicklung über Drittanbieter (z. B. Apple App Store, Google
+                    Play Store). Wir haben keinen Zugriff auf deine Zahlungsdaten.
+                </p>
 
-  <h3>d) Processing for Advertising and Analytics (with Consent)</h3>
-  <p>
-    If the game contains advertisements or analytics services, data will only be processed with your explicit consent (Art. 6 (1) lit. a GDPR).
-  </p>
-  <p>
-    We may use the following services:
-  </p>
-  <ul>
-    <li>Google Analytics for Firebase (to improve the gaming experience)</li>
-    <li>AdMob or Unity Ads (for personalized ads, if enabled)</li>
-  </ul>
-  <p>You can withdraw your consent at any time.</p>
+                <h3>d) Verarbeitung für Werbung und Analyse (mit Einwilligung)</h3>
+                <p>
+                    Falls das Spiel Werbung enthält oder Analysedienste nutzt, werden Daten nur nach deiner
+                    ausdrücklichen Einwilligung verarbeitet (Art. 6 Abs. 1 lit. a DSGVO).<br>
+                    Wir nutzen möglicherweise folgende Dienste:<br>
+                    - Google Analytics for Firebase (zur Verbesserung der Spielerfahrung)<br>
+                    - AdMob oder Unity Ads (für personalisierte Werbung, falls aktiviert)<br><br>
+                    Du kannst deine Einwilligung jederzeit widerrufen.
+                </p>
 
-  <h2>3. Purpose of Data Processing</h2>
-  <p>We use the collected data to:</p>
-  <ul>
-    <li>Provide and improve the game</li>
-    <li>Analyze and fix errors</li>
-    <li>Optimize the gaming experience and content</li>
-    <li>Manage in-app purchases and advertisements</li>
-    <li>Respond to support inquiries</li>
-  </ul>
-  <p>
-    Without your explicit consent, your data will not be used for personalized advertising or tracking.
-  </p>
+                <h2>3. Zweck der Datenverarbeitung</h2>
+                <p>
+                    Wir nutzen die erfassten Daten, um:<br>
+                    - Das Spiel bereitzustellen und zu verbessern<br>
+                    - Fehler zu analysieren und zu beheben<br>
+                    - Spielerlebnis und Inhalte zu optimieren<br>
+                    - In-App-Käufe und Werbung zu verwalten<br>
+                    - Auf Support-Anfragen zu reagieren<br><br>
+                    Ohne deine Einwilligung werden deine Daten nicht für personalisierte Werbung oder Tracking genutzt.
+                </p>
 
-  <h2>4. Data Storage and Deletion</h2>
-  <p>We store your data only as long as necessary for the respective processing purpose:</p>
-  <ul>
-    <li><strong>Usage Data:</strong> Up to 12 months (anonymized)</li>
-    <li><strong>Support Data:</strong> Until your inquiry is resolved</li>
-    <li><strong>Payment Information:</strong> Not stored by us, but handled by third-party providers</li>
-    <li><strong>Advertising & Analytics Data:</strong> According to the policies of third-party providers</li>
-  </ul>
-  <p>If you wish to have your data deleted, please contact us at <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
+                <h2>4. Speicherung und Löschung der Daten</h2>
+                <p>
+                    Wir speichern deine Daten nur so lange, wie es für den jeweiligen Verwendungszweck erforderlich ist:<br>
+                    - Nutzungsdaten: Bis zu 12 Monate (anonymisiert)<br>
+                    - Support-Daten: Bis zur Beantwortung deiner Anfrage<br>
+                    - Zahlungsinformationen: Werden nicht von uns gespeichert, sondern von Drittanbietern verarbeitet<br>
+                    - Werbung & Analysedaten: Laut den Richtlinien der genutzten Drittanbieter (siehe deren Datenschutzerklärung)<br><br>
+                    Wenn du die Löschung deiner Daten wünschst, kontaktiere uns unter <a href="mailto:info@sentug.de">info@sentug.de</a>.
+                </p>
 
-  <h2>5. Disclosure to Third Parties</h2>
-  <p>
-    Your data will not be shared with unauthorized third parties. However, we use external service providers for:
-  </p>
-  <ul>
-    <li>Hosting and storage (e.g., Firebase)</li>
-    <li>Analytics (e.g., Google Analytics, if consent is given)</li>
-    <li>Advertising (e.g., AdMob, if consent is given)</li>
-  </ul>
-  <p>
-    These service providers are contractually obligated to comply with GDPR regulations.
-    Data transfers to third countries (outside the EU) only occur if:
-  </p>
-  <ul>
-    <li>The service provider complies with the EU-U.S. Data Privacy Framework or similar protection mechanisms.</li>
-    <li>You have given explicit consent (Art. 49 (1) lit. a GDPR).</li>
-  </ul>
-  <p>You can object to data transfers at any time.</p>
+                <h2>5. Weitergabe an Dritte</h2>
+                <p>
+                    Deine Daten werden nicht an unbefugte Dritte weitergegeben. Allerdings nutzen wir externe Dienstleister für:<br>
+                    - Hosting und Speicherung (z. B. Firebase)<br>
+                    - Analyse (z. B. Google Analytics, falls zugestimmt)<br>
+                    - Werbung (z. B. AdMob, falls zugestimmt)<br><br>
+                    Diese Dienstleister sind vertraglich zur Einhaltung der DSGVO verpflichtet.<br>
+                    Eine Übermittlung in Drittländer (außerhalb der EU) erfolgt nur, wenn:<br>
+                    - Der Dienstleister dem EU-U.S. Data Privacy Framework oder ähnlichen Schutzmechanismen unterliegt.<br>
+                    - Eine Einwilligung gemäß Art. 49 Abs. 1 lit. a DSGVO vorliegt.<br><br>
+                    Du kannst der Datenübertragung jederzeit widersprechen.
+                </p>
 
-  <h2>6. Your Rights Under GDPR</h2>
-  <p>As a user, you have the following rights:</p>
-  <ul>
-    <li><strong>Right of Access</strong> (Art. 15 GDPR): What data do we store about you?</li>
-    <li><strong>Right to Rectification</strong> (Art. 16 GDPR): If data is incorrect.</li>
-    <li><strong>Right to Erasure</strong> (Art. 17 GDPR): If you want us to delete your data.</li>
-    <li><strong>Right to Restriction of Processing</strong> (Art. 18 GDPR): If you want to limit processing.</li>
-    <li><strong>Right to Data Portability</strong> (Art. 20 GDPR): To receive your data in a transferable format.</li>
-    <li><strong>Right to Object</strong> (Art. 21 GDPR): If you object to data processing.</li>
-    <li><strong>Right to Withdraw Consent</strong> (Art. 7 (3) GDPR): If you want to revoke previously given consent.</li>
-  </ul>
-  <p>To exercise your rights, please contact us at <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
-  <p>
-    If you believe that the processing of your data violates GDPR, you have the right to file a complaint with a data protection authority.
-  </p>
+                <h2>6. Deine Rechte gemäß DSGVO</h2>
+                <p>
+                    Als Nutzer hast du folgende Rechte:<br>
+                    - Recht auf Auskunft (Art. 15 DSGVO)<br>
+                    - Recht auf Berichtigung (Art. 16 DSGVO)<br>
+                    - Recht auf Löschung (Art. 17 DSGVO)<br>
+                    - Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br>
+                    - Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br>
+                    - Widerspruchsrecht (Art. 21 DSGVO)<br>
+                    - Recht auf Widerruf (Art. 7 Abs. 3 DSGVO)<br><br>
+                    Zur Ausübung deiner Rechte kontaktiere uns unter <a href="mailto:info@sentug.de">info@sentug.de</a>.<br>
+                    Falls du der Meinung bist, dass die Verarbeitung deiner Daten gegen die DSGVO verstößt, hast du das Recht, dich bei einer Aufsichtsbehörde zu beschweren.
+                </p>
 
-  <h2>7. Consent & Opt-Out Options</h2>
-  <p>If we use personal data for advertising or analytics, you have the following options:</p>
-  <ul>
-    <li>Accept or decline when first launching the game</li>
-    <li>Change your consent settings anytime in the app settings</li>
-    <li>Disable ad tracking in your device settings (iOS/Android)</li>
-  </ul>
+                <h2>7. Einwilligung & Opt-Out-Möglichkeiten</h2>
+                <p>
+                    Wenn wir personenbezogene Daten für Werbung oder Analyse nutzen, hast du folgende Möglichkeiten:<br>
+                    - Zustimmen oder Ablehnen beim ersten Spielstart<br>
+                    - Einwilligung jederzeit ändern über die Einstellungen in der App<br>
+                    - Werbetracking deaktivieren in den Geräteeinstellungen (iOS/Android)
+                </p>
 
-  <h2>8. Changes to This Privacy Policy</h2>
-  <p>
-    We reserve the right to update this Privacy Policy in case of legal or technical changes.
-    The current version will always be available in the app or on our website.
-  </p>
+                <h2>8. Änderungen dieser Datenschutzerklärung</h2>
+                <p>
+                    Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, falls sich rechtliche oder
+                    technische Änderungen ergeben. Die aktuelle Version findest du immer in der App oder auf
+                    unserer Website.
+                </p>
 
-  <h2>9. Contact for Data Protection Inquiries</h2>
-  <p>
-    If you have questions about data protection or wish to exercise your rights, you can contact us at:
-  </p>
-  <p>
-    SENT UG (haftungsbeschränkt)<br>
-    Eschenbachstr. 34<br>
-    60596 Frankfurt<br>
-    Germany<br>
-    📧 <a href="mailto:info@sentug.de">info@sentug.de</a>
-  </p>
-      </div>
-    </section>
-  </main>
+                <h2>9. Kontakt für Datenschutz-Anfragen</h2>
+                <p>
+                    Falls du Fragen zum Datenschutz hast oder deine Rechte ausüben möchtest, kannst du uns unter
+                    folgender Adresse erreichen:<br><br>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Frankfurt am Main<br>
+                    Deutschland<br>
+                    <a href="mailto:info@sentug.de">info@sentug.de</a>
+                </p>
+            </div>
+            <div class="lang-en hidden" id="datenschutz-en">
+                <h1>Privacy Policy</h1>
+                <p><strong>Last updated:</strong> March 18, 2025</p>
 
-  <footer>
-    &copy; 2025 SENT UG – Zukunft gestalten durch digitale Verbindung
-  </footer>
+                <p>
+                    We, SENT UG (haftungsbeschränkt), take the protection of your personal data very seriously.
+                    In this privacy policy, we inform you about which data we collect when you use our video game <strong>DRINKORY</strong>,
+                    how we use it, and what rights you have.
+                </p>
 
-  <script>
-  function showSection(sectionId) {
-    // Alle Sections verstecken
-    document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
+                <h2>1. Controller pursuant to Art. 4 (7) GDPR</h2>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Frankfurt<br>
+                    Germany<br>
+                    📧 info@sentug.de
+                </p>
+                <p>
+                    If you have any questions about the processing of your personal data, you can contact us using the details provided above.
+                </p>
 
-    // Nur gewählte Section anzeigen
-    const section = document.getElementById(sectionId);
-    section.classList.remove('hidden');
-    
-    // Aktuelle Sprache anzeigen
-    const currentLang = document.querySelector('select')?.value || 'de';
-    selectLanguage(currentLang, sectionId);
-  }
+                <h2>2. Collection and Processing of Personal Data</h2>
+                <p>
+                    We collect and process personal data only in accordance with the General Data Protection Regulation (GDPR) and only if:
+                </p>
+                <ul>
+                    <li>You have given us your consent (Art. 6 (1) lit. a GDPR)</li>
+                    <li>The processing is necessary for the performance of a contract or for pre-contractual measures (Art. 6 (1) lit. b GDPR)</li>
+                    <li>The processing is necessary for the purposes of our legitimate interests (Art. 6 (1) lit. f GDPR)</li>
+                </ul>
 
-  function selectLanguage(lang, currentSectionId = null) {
-    // Verstecke alle Sprachvarianten
-    document.querySelectorAll('.lang-de, .lang-en').forEach(el => el.classList.add('hidden'));
+                <h3>a) Automatically Collected Data</h3>
+                <p>
+                    When playing DRINKORY, the following data is automatically collected:
+                </p>
+                <ul>
+                    <li><strong>Technical Data:</strong> Device type, operating system, IP address</li>
+                    <li><strong>Usage Data:</strong> Game statistics (e.g., highscores, progress), interactions within the game</li>
+                    <li><strong>Error Reports & Crash Logs:</strong> To improve the app</li>
+                </ul>
+                <p>
+                    These data are processed in an anonymized or pseudonymized manner whenever possible.
+                </p>
 
-    // Zeige passende Sprache nur in der aktuellen Sektion
-    const section = currentSectionId 
-      ? document.getElementById(currentSectionId) 
-      : document.querySelector('main section:not(.hidden)');
-    if (!section) return;
+                <h3>b) Data Provided by the User</h3>
+                <p>
+                    If you register for additional features or contact us, we may store the following information:
+                </p>
+                <ul>
+                    <li>Name or username</li>
+                    <li>Email address (if you contact us)</li>
+                    <li>Feedback and support inquiries</li>
+                </ul>
 
-    section.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
-  }
+                <h3>c) Payment Information</h3>
+                <p>
+                    For in-app purchases, payment processing is handled by third-party providers (e.g., Apple App Store, Google Play Store).
+                    We do not have access to your payment data.
+                </p>
 
-  document.addEventListener('DOMContentLoaded', () => {
-    showSection('home'); // Startseite anzeigen
-  });
-</script>
+                <h3>d) Processing for Advertising and Analytics (with Consent)</h3>
+                <p>
+                    If the game contains advertisements or analytics services, data will only be processed with your explicit consent (Art. 6 (1) lit. a GDPR).
+                </p>
+                <p>
+                    We may use the following services:
+                </p>
+                <ul>
+                    <li>Google Analytics for Firebase (to improve the gaming experience)</li>
+                    <li>AdMob or Unity Ads (for personalized ads, if enabled)</li>
+                </ul>
+                <p>You can withdraw your consent at any time.</p>
+
+                <h2>3. Purpose of Data Processing</h2>
+                <p>We use the collected data to:</p>
+                <ul>
+                    <li>Provide and improve the game</li>
+                    <li>Analyze and fix errors</li>
+                    <li>Optimize the gaming experience and content</li>
+                    <li>Manage in-app purchases and advertisements</li>
+                    <li>Respond to support inquiries</li>
+                </ul>
+                <p>
+                    Without your explicit consent, your data will not be used for personalized advertising or tracking.
+                </p>
+
+                <h2>4. Data Storage and Deletion</h2>
+                <p>We store your data only as long as necessary for the respective processing purpose:</p>
+                <ul>
+                    <li><strong>Usage Data:</strong> Up to 12 months (anonymized)</li>
+                    <li><strong>Support Data:</strong> Until your inquiry is resolved</li>
+                    <li><strong>Payment Information:</strong> Not stored by us, but handled by third-party providers</li>
+                    <li><strong>Advertising & Analytics Data:</strong> According to the policies of third-party providers</li>
+                </ul>
+                <p>If you wish to have your data deleted, please contact us at <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
+
+                <h2>5. Disclosure to Third Parties</h2>
+                <p>
+                    Your data will not be shared with unauthorized third parties. However, we use external service providers for:
+                </p>
+                <ul>
+                    <li>Hosting and storage (e.g., Firebase)</li>
+                    <li>Analytics (e.g., Google Analytics, if consent is given)</li>
+                    <li>Advertising (e.g., AdMob, if consent is given)</li>
+                </ul>
+                <p>
+                    These service providers are contractually obligated to comply with GDPR regulations.
+                    Data transfers to third countries (outside the EU) only occur if:
+                </p>
+                <ul>
+                    <li>The service provider complies with the EU-U.S. Data Privacy Framework or similar protection mechanisms.</li>
+                    <li>You have given explicit consent (Art. 49 (1) lit. a GDPR).</li>
+                </ul>
+                <p>You can object to data transfers at any time.</p>
+
+                <h2>6. Your Rights Under GDPR</h2>
+                <p>As a user, you have the following rights:</p>
+                <ul>
+                    <li><strong>Right of Access</strong> (Art. 15 GDPR): What data do we store about you?</li>
+                    <li><strong>Right to Rectification</strong> (Art. 16 GDPR): If data is incorrect.</li>
+                    <li><strong>Right to Erasure</strong> (Art. 17 GDPR): If you want us to delete your data.</li>
+                    <li><strong>Right to Restriction of Processing</strong> (Art. 18 GDPR): If you want to limit processing.</li>
+                    <li><strong>Right to Data Portability</strong> (Art. 20 GDPR): To receive your data in a transferable format.</li>
+                    <li><strong>Right to Object</strong> (Art. 21 GDPR): If you object to data processing.</li>
+                    <li><strong>Right to Withdraw Consent</strong> (Art. 7 (3) GDPR): If you want to revoke previously given consent.</li>
+                </ul>
+                <p>To exercise your rights, please contact us at <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
+                <p>
+                    If you believe that the processing of your data violates GDPR, you have the right to file a complaint with a data protection authority.
+                </p>
+
+                <h2>7. Consent & Opt-Out Options</h2>
+                <p>If we use personal data for advertising or analytics, you have the following options:</p>
+                <ul>
+                    <li>Accept or decline when first launching the game</li>
+                    <li>Change your consent settings anytime in the app settings</li>
+                    <li>Disable ad tracking in your device settings (iOS/Android)</li>
+                </ul>
+
+                <h2>8. Changes to This Privacy Policy</h2>
+                <p>
+                    We reserve the right to update this Privacy Policy in case of legal or technical changes.
+                    The current version will always be available in the app or on our website.
+                </p>
+
+                <h2>9. Contact for Data Protection Inquiries</h2>
+                <p>
+                    If you have questions about data protection or wish to exercise your rights, you can contact us at:
+                </p>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Frankfurt<br>
+                    Germany<br>
+                    📧 <a href="mailto:info@sentug.de">info@sentug.de</a>
+                </p>
+            </div>
+            <div class="lang-es hidden" id="datenschutz-es">
+                <h1>Política de Privacidad</h1>
+                <p><strong>Última actualización:</strong> 18 de marzo de 2025</p>
+
+                <p>
+                    Nosotros, SENT UG (haftungsbeschränkt), nos tomamos muy en serio la protección de sus datos personales.
+                    En esta política de privacidad, le informamos sobre qué datos recopilamos cuando utiliza nuestro videojuego <strong>DRINKORY</strong>,
+                    cómo los usamos y qué derechos tiene.
+                </p>
+
+                <h2>1. Responsable según el Art. 4 (7) del RGPD</h2>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Fráncfort del Meno<br>
+                    Alemania<br>
+                    📧 info@sentug.de
+                </p>
+                <p>
+                    Si tiene alguna pregunta sobre el procesamiento de sus datos personales, puede ponerse en contacto con nosotros utilizando los datos proporcionados anteriormente.
+                </p>
+
+                <h2>2. Recopilación y Procesamiento de Datos Personales</h2>
+                <p>
+                    Recopilamos y procesamos datos personales solo de acuerdo con el Reglamento General de Protección de Datos (RGPD) y solo si:
+                </p>
+                <ul>
+                    <li>Nos ha dado su consentimiento (Art. 6 (1) lit. a RGPD)</li>
+                    <li>El procesamiento es necesario para la ejecución de un contrato o para medidas precontractuales (Art. 6 (1) lit. b RGPD)</li>
+                    <li>El procesamiento es necesario para los fines de nuestros intereses legítimos (Art. 6 (1) lit. f RGPD)</li>
+                </ul>
+
+                <h3>a) Datos Recopilados Automáticamente</h3>
+                <p>
+                    Al jugar a DRINKORY, se recopilan automáticamente los siguientes datos:
+                </p>
+                <ul>
+                    <li><strong>Datos Técnicos:</strong> Tipo de dispositivo, sistema operativo, dirección IP</li>
+                    <li><strong>Datos de Uso:</strong> Estadísticas del juego (por ejemplo, puntuaciones altas, progreso), interacciones dentro del juego</li>
+                    <li><strong>Informes de Errores y Registros de Fallos:</strong> Para mejorar la aplicación</li>
+                </ul>
+                <p>
+                    Estos datos se procesan de forma anonimizada o seudonimizada siempre que sea posible.
+                </p>
+
+                <h3>b) Datos Proporcionados por el Usuario</h3>
+                <p>
+                    Si se registra para funciones adicionales o se pone en contacto con nosotros, podemos almacenar la siguiente información:
+                </p>
+                <ul>
+                    <li>Nombre o nombre de usuario</li>
+                    <li>Dirección de correo electrónico (si se pone en contacto con nosotros)</li>
+                    <li>Comentarios y consultas de soporte</li>
+                </ul>
+
+                <h3>c) Información de Pago</h3>
+                <p>
+                    Para las compras dentro de la aplicación, el procesamiento del pago lo realizan proveedores externos (por ejemplo, Apple App Store, Google Play Store).
+                    No tenemos acceso a sus datos de pago.
+                </p>
+
+                <h3>d) Procesamiento para Publicidad y Análisis (con Consentimiento)</h3>
+                <p>
+                    Si el juego contiene anuncios o servicios de análisis, los datos solo se procesarán con su consentimiento explícito (Art. 6 (1) lit. a RGPD).
+                </p>
+                <p>
+                    Podemos utilizar los siguientes servicios:
+                </p>
+                <ul>
+                    <li>Google Analytics para Firebase (para mejorar la experiencia de juego)</li>
+                    <li>AdMob o Unity Ads (para anuncios personalizados, si están habilitados)</li>
+                </ul>
+                <p>Puede retirar su consentimiento en cualquier momento.</p>
+
+                <h2>3. Propósito del Procesamiento de Datos</h2>
+                <p>Utilizamos los datos recopilados para:</p>
+                <ul>
+                    <li>Proporcionar y mejorar el juego</li>
+                    <li>Analizar y corregir errores</li>
+                    <li>Optimizar la experiencia de juego y el contenido</li>
+                    <li>Gestionar las compras dentro de la aplicación y los anuncios</li>
+                    <li>Responder a consultas de soporte</li>
+                </ul>
+                <p>
+                    Sin su consentimiento explícito, sus datos no se utilizarán para publicidad personalizada ni para seguimiento.
+                </p>
+
+                <h2>4. Almacenamiento y Eliminación de Datos</h2>
+                <p>Almacenamos sus datos solo durante el tiempo necesario para el propósito de procesamiento respectivo:</p>
+                <ul>
+                    <li><strong>Datos de Uso:</strong> Hasta 12 meses (anonimizados)</li>
+                    <li><strong>Datos de Soporte:</strong> Hasta que se resuelva su consulta</li>
+                    <li><strong>Información de Pago:</strong> No la almacenamos nosotros, sino que la manejan proveedores externos</li>
+                    <li><strong>Datos de Publicidad y Análisis:</strong> Según las políticas de los proveedores externos</li>
+                </ul>
+                <p>Si desea que se eliminen sus datos, póngase en contacto con nosotros en <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
+
+                <h2>5. Divulgación a Terceros</h2>
+                <p>
+                    Sus datos no se compartirán con terceros no autorizados. Sin embargo, utilizamos proveedores de servicios externos para:
+                </p>
+                <ul>
+                    <li>Alojamiento y almacenamiento (por ejemplo, Firebase)</li>
+                    <li>Análisis (por ejemplo, Google Analytics, si se da el consentimiento)</li>
+                    <li>Publicidad (por ejemplo, AdMob, si se da el consentimiento)</li>
+                </ul>
+                <p>
+                    Estos proveedores de servicios están obligados contractualmente a cumplir con las regulaciones del RGPD.
+                    Las transferencias de datos a terceros países (fuera de la UE) solo se producen si:
+                </p>
+                <ul>
+                    <li>El proveedor de servicios cumple con el Marco de Privacidad de Datos UE-EE. UU. o mecanismos de protección similares.</li>
+                    <li>Ha dado su consentimiento explícito (Art. 49 (1) lit. a RGPD).</li>
+                </ul>
+                <p>Puede oponerse a las transferencias de datos en cualquier momento.</p>
+
+                <h2>6. Sus Derechos bajo el RGPD</h2>
+                <p>Como usuario, tiene los siguientes derechos:</p>
+                <ul>
+                    <li><strong>Derecho de Acceso</strong> (Art. 15 RGPD): ¿Qué datos suyos almacenamos?</li>
+                    <li><strong>Derecho de Rectificación</strong> (Art. 16 RGPD): Si los datos son incorrectos.</li>
+                    <li><strong>Derecho de Supresión</strong> (Art. 17 RGPD): Si desea que eliminemos sus datos.</li>
+                    <li><strong>Derecho a la Limitación del Tratamiento</strong> (Art. 18 RGPD): Si desea limitar el procesamiento.</li>
+                    <li><strong>Derecho a la Portabilidad de los Datos</strong> (Art. 20 RGPD): Para recibir sus datos en un formato transferible.</li>
+                    <li><strong>Derecho de Oposición</strong> (Art. 21 RGPD): Si se opone al procesamiento de datos.</li>
+                    <li><strong>Derecho a Retirar el Consentimiento</strong> (Art. 7 (3) RGPD): Si desea revocar el consentimiento previamente otorgado.</li>
+                </ul>
+                <p>Para ejercer sus derechos, póngase en contacto con nosotros en <a href="mailto:info@sentug.de">info@sentug.de</a>.</p>
+                <p>
+                    Si cree que el procesamiento de sus datos infringe el RGPD, tiene derecho a presentar una reclamación ante una autoridad de protección de datos.
+                </p>
+
+                <h2>7. Opciones de Consentimiento y Exclusión Voluntaria</h2>
+                <p>Si utilizamos datos personales para publicidad o análisis, tiene las siguientes opciones:</p>
+                <ul>
+                    <li>Aceptar o rechazar al iniciar el juego por primera vez</li>
+                    <li>Cambiar la configuración de su consentimiento en cualquier momento en la configuración de la aplicación</li>
+                    <li>Desactivar el seguimiento de anuncios en la configuración de su dispositivo (iOS/Android)</li>
+                </ul>
+
+                <h2>8. Cambios a esta Política de Privacidad</h2>
+                <p>
+                    Nos reservamos el derecho de actualizar esta Política de Privacidad en caso de cambios legales o técnicos.
+                    La versión actual siempre estará disponible en la aplicación o en nuestro sitio web.
+                </p>
+
+                <h2>9. Contacto para Consultas de Protección de Datos</h2>
+                <p>
+                    Si tiene preguntas sobre la protección de datos o desea ejercer sus derechos, puede ponerse en contacto con nosotros en:
+                </p>
+                <p>
+                    SENT UG (haftungsbeschränkt)<br>
+                    Eschenbachstr. 34<br>
+                    60596 Fráncfort del Meno<br>
+                    Alemania<br>
+                    📧 <a href="mailto:info@sentug.de">info@sentug.de</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="support" class="hidden">
+            <div class="lang-de">
+                <h1>Support</h1>
+                <p>Für Support-Anfragen oder bei Fragen zur App kontaktiere uns gerne unter:</p>
+                <p><strong>E-Mail:</strong> <a href="mailto:info@sentug.de">info@sentug.de</a></p>
+                <p><strong>Host der App:</strong> SENT UG (haftungsbeschränkt)</p>
+            </div>
+            <div class="lang-en hidden">
+                <h1>Support</h1>
+                <p>For support inquiries or questions about the app, please contact us at:</p>
+                <p><strong>Email:</strong> <a href="mailto:info@sentug.de">info@sentug.de</a></p>
+                <p><strong>App Host:</strong> SENT UG (haftungsbeschränkt)</p>
+            </div>
+            <div class="lang-es hidden">
+                <h1>Soporte</h1>
+                <p>Para consultas de soporte o preguntas sobre la aplicación, por favor contáctenos en:</p>
+                <p><strong>Correo electrónico:</strong> <a href="mailto:info@sentug.de">info@sentug.de</a></p>
+                <p><strong>Anfitrión de la Aplicación:</strong> SENT UG (haftungsbeschränkt)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 SENT UG – Zukunft gestalten durch digitale Verbindung
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Alle Sections verstecken
+            document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
+
+            // Nur gewählte Section anzeigen
+            const section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            
+            // Aktuelle Sprache anzeigen
+            const currentLang = document.querySelector('select')?.value || 'de';
+            selectLanguage(currentLang, sectionId);
+        }
+
+        function selectLanguage(lang, currentSectionId = null) {
+            // Verstecke alle Sprachvarianten
+            document.querySelectorAll('.lang-de, .lang-en, .lang-es').forEach(el => el.classList.add('hidden'));
+
+            // Zeige passende Sprache nur in der aktuellen Sektion
+            const section = currentSectionId 
+                ? document.getElementById(currentSectionId) 
+                : document.querySelector('main section:not(.hidden)');
+            if (!section) return;
+
+            section.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home'); // Startseite anzeigen
+        });
+    </script>
 </body>
 </html>
